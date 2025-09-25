@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Analysis Control Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Place it behind other content */
+            object-fit: cover;
+            /* Cover the entire viewport */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #startBtn {
+            background-color: transparent;
+            border: 2px solid #00bdff;
+            color: #00bdff;
+            font-weight: 700;
+            font-size: 20px;
+            width: 135px;
+            height: 50px;
+        }
+
+        .content {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #startBtn:hover {
+            background-color: #0197ce;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <video id="video-background" autoplay loop muted>
+        <source src="/static/video1.mp4" type="video/mp4">
+        <!-- Add additional source elements for WebM and OGG if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1 style="color: #00bdff">Emotion Analysis Control Panel</h1>
+        <div class="content">
+            <h3 style="color: #00bdff">Let's Detect Spoof Calls</h3>
+            <button id="startBtn">Let's Go</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("startBtn").addEventListener("click", () => {
+            window.location.href = "/result";
+        })
+    </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</body>
+
+</html>
