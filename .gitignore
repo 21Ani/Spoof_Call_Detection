@@ -1,0 +1,11 @@
+# Standard Python ignore
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# VS Code ignore
+.vscode/
+
+# Ignore generated images and other files
+*.png
